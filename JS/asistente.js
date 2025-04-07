@@ -31,7 +31,7 @@ function sendMessage() {
     .then(response => response.json())
     .then(data => {
       console.log("Respuesta del asistente:", data.respuesta); // 👈 muy útil para depurar
-      aiMsg.innerHTML = `<strong>Asistente:</strong> ${data.respuesta}`;
+      aiMsg.innerHTML = `<strong>Asistente:</strong> ${data.result}`;
     })
     .catch(error => {
       aiMsg.innerHTML = `<strong>Asistente:</strong> Ocurrió un error al procesar tu mensaje.`;
