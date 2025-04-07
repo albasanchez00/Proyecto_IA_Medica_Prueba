@@ -21,7 +21,7 @@ function sendMessage() {
     chatLog.scrollTop = chatLog.scrollHeight;
 
     // Llamar al webhook de n8n con el mensaje del usuario
-    fetch("https://primary-production-8eee.up.railway.app/webhook/asistente", {
+    fetch("https://primary-production-8eee.up.railway.app/webhook-test/asistente", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
