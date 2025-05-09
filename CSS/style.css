@@ -32,7 +32,6 @@ ul{
     --color-primary-button:#006380;
     --color-secundary-button:#008d95;
 }
-
 /* Asegura que `html` y `body` ocupen toda la altura */
 html, body {
     height: 100vh;
@@ -40,13 +39,10 @@ html, body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-
 /* Oculta la barra de scroll en Chrome, Safari y Edge */
 main::-webkit-scrollbar {
     display: none;
 }
-
 /* Contenedor principal usando `flexbox` */
 .contenedor {
     display: flex;
@@ -59,11 +55,11 @@ main {
     padding: 20px;
     overflow: auto; /* Evita el desbordamiento */
 }
-
 .icon{
     color:var(--color-primary-button);
 }
 /* FIN AJUSTES GENERALES */
+
 
 /* INICIO HEADER */
 @media screen and (min-width:1023px) {
@@ -125,10 +121,8 @@ main {
         }
     }
 }
-
 /* Inicio Menu Responsive */
-/* Botón de menú hamburguesa */
-.menu-toggle {
+.menu-toggle { /* Botón de menú hamburguesa */
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -136,7 +130,6 @@ main {
     height: 25px;
     cursor: pointer;
 }
-
 .menu-toggle span {
     background: var(--color_blanco);
     height: 4px;
@@ -144,7 +137,6 @@ main {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
-
 /* Menú en Desktop */
 @media screen and (max-width: 1023px) {
     .menu-toggle {
@@ -181,7 +173,6 @@ main {
             font-size: 15px;
         }
     }
-
     .menu-toggle{
         width: 20px;
         height: 18px;
@@ -201,11 +192,9 @@ main {
         overflow: hidden;
         transition: height 0.3s ease-in-out;
     }
-
     .nav-links.show {
         height: 200px;
     }
-
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -247,13 +236,15 @@ main{
     padding: 10px 10px;
     margin-top: 20px;
     picture{
+        border-radius:0 30px 30px 0;
         width: 20%;
         img{
             width: 300px;
             height: auto;
             box-shadow: 0 5px 5px 0px rgba(199,199,199,0.75);
-            -webkit-box-shadow: 0 5px 5px 0px rgba(199,199,199,0.75);
+            -webkit-box-shadow: 0 5px 5px 2px rgba(199,199,199,0.75);
             -moz-box-shadow: 0 5px 5px 0px rgba(199,199,199,0.75);
+            border-radius:0 30px 30px 0;
         }
     }
     form{
@@ -326,6 +317,7 @@ main{
 }
 /* Fin Sección Formulario */
 
+
 /* Inicio Sección Features */
 .features-container {
     display: flex;
@@ -337,7 +329,6 @@ main{
     padding: 20px;
     margin: 40px 0;
 }
-
 /* Estilos de cada característica */
 .feature {
     width: 30%; /* 3 elementos por fila en escritorio */
@@ -372,6 +363,7 @@ main{
 }
 /* Fin Sección Features */
 
+
 /* Inicio Sección servicios */
 #section_main_2{
     display: flex;
@@ -379,7 +371,7 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    min-width: 70%;
     margin: 20px 0;
     background-color: var(--color_blanco);
     box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
@@ -411,13 +403,11 @@ main{
                 width: 85%;
                 padding: 0 10px;
                 h3{
-                    width: 400px;
                     font-size: 20px;
                     color: var(--color-primary-button);
                     margin-bottom: 5px;
                 }
                 p{
-                    width: 400px;
                     font-size: 15px;
                     color: var(--color-secundary-button);
                 }
@@ -425,78 +415,66 @@ main{
         }    
     }
 }
+/*Incio Responsive Servicios*/
+@media (max-width: 768px) {
+    #section_main_2 {
+        width: 100%;
+        margin: 20px auto;
+        padding: 10px;
+        background: var(--color_blanco);
+        box-shadow: -6px 5px 5px rgba(199,199,199,0.75);
+        border-radius: 30px;
+      }
+      /* cada fila de servicios */
+      #section_main_2 .section_services {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      /* cada tarjeta */
+      #section_main_2 .div_general_services {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background: white;
+        flex: 1 1 100%; /* ocupa todo en móvil */
+      }
+      /* icono */
+      #section_main_2 .div_general_services picture {
+        flex: 0 0 40px;
+        margin-right: 10px;
+      }
+      #section_main_2 .div_general_services picture img {
+        width: 100%;
+        height: auto;
+      }
+      /* texto */
+      #section_main_2 .div_description {
+        flex: 1;
+      }
+      #section_main_2 .div_description h3,
+      #section_main_2 .div_description p {
+        width: auto; /* quita esos 400px */
+        max-width: 100%;
+        margin: 0;
+      }
+      #section_main_2 .div_description h3 {
+        font-size: 1.1rem;
+        color: var(--color-primary-button);
+        margin-bottom: 4px;
+      }
+      #section_main_2 .div_description p {
+        font-size: 0.9rem;
+        color: var(--color-secundary-button);
+      }
+}
+/*Fin Responsive Servicios*/
 /* Fin Sección servicios */
 /* FIN MAIN INDEX */
 
 
 /* INICIO PÁGINAS WEB */
-/* Incio Páginas Contacto */
-.section_form_2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 70%;
-    margin-top: 20px;
-    background-color: var(--color_blanco);
-    border-radius: 30px;
-    box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
-    -webkit-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
-    -moz-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
-    picture{
-        width: 30%;
-        height: auto;
-        img{
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-        }
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 70%;
-        height: auto;
-        padding: 15px 0;
-        p{
-            display: flex;
-            flex-direction: column;
-            padding: 10px;
-            font-size: 18px;
-            input{
-                height: 45px;
-                width: 600px;
-                margin: 5px 0;
-                border-radius: 20px;
-                border: 0.5px solid var(--color-primary-button);
-                background-color: rgb(255, 255, 255);
-                font-size: 16px;
-                padding: 0 10px;
-            }
-            button {
-                cursor: pointer; 
-                border: 0px solid rgba(50, 199, 162, 0.35); 
-                font-size: 15px; 
-                color: var(--color_blanco); 
-                padding: 10px 30px; 
-                width: 200px; 
-                box-shadow: rgb(146, 255, 216) -6px 5px 19px -5px; 
-                border-radius: 50px; 
-                background: var(--color-primary-button);
-            }
-            button:hover{   
-                color: black;
-                width: 205px;
-                background: var(--color-secundary-button);
-                border: 1px solid var(--color-primary-button);
-            }
-        }   
-    }
-}
-
-
 /*Inciio Pagina Inicio Sesion*/
 .main-iSesion{
     display: flex;
@@ -516,8 +494,9 @@ main{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 60%;
+        min-width: 60%;
         height: 100%;
+        border-radius: 30px;
         background-color: var(--color_blanco);
         box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
         -webkit-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
@@ -531,7 +510,7 @@ main{
             margin: 10px;
             font-size: 20px;
             input{
-                height: 45px;
+                height: 35px;
                 width: 600px;
                 margin: 5px 0;
                 border-radius: 20px;
@@ -566,127 +545,162 @@ main{
         }
     }
 }
+@media screen and (max-width:768px) {
+    .section_iSesion form{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        p{
+            font-size: 14px;
+        }
+        input{
+            max-width: 280px;
+        }
+    }
+}
 
 /*Fin Pagina Inicio Sesion*/
 
+
 /*Inciio Pagina Registro*/
-.section_main_registro{
+.section_form_registro form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 15px;
+    box-sizing: border-box;
+    background: var(--color_blanco);
+    border-radius: 30px;
+    box-shadow: -6px 5px 5px rgba(199,199,199,0.75);
+  }
+  /* Cada <p> con label+input es un “flex item” */
+  .section_form_registro form p {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 5px;
+    margin: 0;
+    flex: 1 1 100%; /* 100% ancho en móvil */
+  }
+  /* Inputs y selects fluidos */
+  .section_form_registro form p input,
+  .section_form_registro form p select {
     width: 100%;
-    height: 100%;
-    padding: 0 0;
-}
-.section_form_registro{
+    padding: 0 12px;
+    height: 36px;
+    border: 1px solid var(--color-primary-button);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+  /* Checkbox + términos ocupa 100% */
+  .section_form_registro .politicsUse {
+    flex: 1 1 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+
     align-items: center;
-    width: 60%;
-    padding: 10px 10px;
-    margin-top: 20px;
-    picture{
-        width: 20%;
-        img{
-            width: 300px;
-            height: auto;
-            box-shadow: 0 5px 5px 0px rgba(199,199,199,0.75);
-            -webkit-box-shadow: 0 5px 5px 0px rgba(199,199,199,0.75);
-            -moz-box-shadow: 0 5px 5px 0px rgba(199,199,199,0.75);
-        }
-    }
-    form{
+    gap: 8px;
+  }
+  .section_form_registro .politicsUse input {
+    width: auto;
+  }
+  /* Botón ocupa 100%, centrado */
+  .section_form_registro form p:last-child {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .section_form_registro form button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 50px;
+    background: var(--color-primary-button);
+    color: #fff;
+    cursor: pointer;
+    transition: all .2s;
+}
+.section_form_registro form button:hover {
+    background: var(--color-secundary-button);
+    color: #000;
+    transform: scale(1.02);
+}
+/* Inicio Responsive Desktop Registro */
+@media (min-width: 768px) {
+    .section_form_registro {
         display: flex;
-        flex-direction: column;
+        gap: 20px;
+        max-width: 900px;
+        margin: 20px auto;
+        align-items: flex-start;
+    }
+    /* Imagen a la izquierda */
+    .section_form_registro picture {
+        flex: 0 0 35%;
+    }
+    /* Form a la derecha, 2 columnas */
+    .section_form_registro form {
+        flex: 1 1 60%;
+        display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: center;
-        background-color: var(--color_blanco);
-        border-radius: 30px;
-        box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
-        -webkit-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
-        -moz-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
-        width: 100%;
-        height: 450px;
-        padding: 25px 10px 0 10px;
-        .politicsUse{
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-            align-items: center;
-            input{
-                cursor: pointer;
-                width: 35px;
-            }
-            strong{
-                color: #006380;
-                padding-left:5px;                
-            }
-            strong:hover{
-                color: #006380;
-                text-decoration: underline;
-                cursor: pointer;
-            }
-        }
-        p{
-            display: flex;
-            flex-direction: column;
-            padding: 5px;
-            font-size: 15px;
-            input{
-                height: 30px;
-                width: 370px;
-                margin: 5px 0;
-                border-radius: 20px;
-                border: 0.5px solid var(--color-primary-button);
-                background-color: rgb(255, 255, 255);
-                font-size: 14px;
-                padding: 0 10px;
-            }
-            button {
-                cursor: pointer; 
-                border: 0px solid rgba(50, 199, 162, 0.35); 
-                font-size: 14px; 
-                color: rgb(255, 255, 255); 
-                padding: 10px 30px; 
-                width: 200px; 
-                box-shadow: rgb(146, 255, 216) -6px 5px 19px -5px; 
-                border-radius: 50px; 
-                background: var(--color-primary-button);
-            }
-            button:hover{   
-                color: rgb(0, 0, 0);
-                width: 205px;
-                background: var(--color-secundary-button);
-                border: 1px solid var(--color-secundary-button);
-            }
-        }
-        #ciudad{
-            height: 30px;
-            width: 370px;
-            margin: 5px 0;
-            border-radius: 20px;
-            border: 0.5px solid var(--color-primary-button);
-            background-color: rgb(255, 255, 255);
-            font-size: 14px;
-            padding: 0 10px;
-        }
-        #documentId{
-            width: 45px;
-            height: 25px;
-            border-radius: 30px;
-            background-color: var(--fondo-body);
-            cursor: pointer;
-        }   
-        
-        #politcs_privacy{
-            width: 15px;
-            margin: 10px;
-        }
+        gap: 20px;
+    }
+    .section_form_registro form p {
+        flex: 1 1 calc(50% - 20px);
+        margin: 0;
+    }
+    /* Términos: ocupa fila completa y centra verticalmente */
+    .section_form_registro .politicsUse {
+        flex: 1 1 100%;
+        display: flex;
+        align-items: center;    /* Alinea checkbox y texto */
+        gap: 8px;               /* Espacio entre checkbox y texto */
+        margin: 0;              /* Elimina márgenes extra */
+    }
+    .politicsUse input[type="checkbox"] {
+        margin: 0;              /* Quita margen por defecto */
+        flex: 0 0 auto;
+    }
+    .section_form_registro .politicsUse label {
+        color: var(--color-secundary-button);
+    }
+    .section_form_registro .politicsUse a {
+        color: var(--color-primary-button);
+        text-decoration: none;
+    }
+    .section_form_registro .politicsUse a:hover {
+        text-decoration: underline;
+    }
+    .politicsUse label{
+        font-size: 12px;
+    }
+    /* Botón: ocupa fila completa y se centra */
+    .section_form_registro form p:last-child {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .section_form_registro form p:last-child button {
+        padding: 10px 30px;
+        min-width: 140px;
+        border-radius: 50px;
+        background: var(--color-primary-button);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: all .2s;
+    }
+    .section_form_registro form p:last-child button:hover {
+        background: var(--color-secundary-button);
+        color: #000;
+        transform: scale(1.02);
     }
 }
+/* Fin Responsive Desktop Registro */
+/* FIN PAGINA REGISTRO */
+  
 
 /* Inicio Página Servicios Cliente */
 .section_servicioCliente{
@@ -743,13 +757,13 @@ main{
         }
         
     }
-    /* 📌 Contenedor de los videos */
+    /* Contenedor de los videos */
     .video-container {
         display: flex;
         justify-content: center;
         gap: 40px;
     }
-    /* 📌 Tarjetas de video */
+    /* Tarjetas de video */
     .video-card {
         background: white;
         padding: 20px;
@@ -768,19 +782,18 @@ main{
         }
     }
 }
-/* 🔹 Responsive: Ajuste en móviles */
+/* Responsive: Ajuste en móviles */
 @media screen and (max-width: 768px) {
     .video-container {
         flex-direction: column;
         gap: 20px;
     }
-
     .video-card {
-        width: 90%; /* Ocupa más espacio en pantallas pequeñas */
+        width: 90%;
         margin: 0 auto;
     }
 }
-/* 📌 Imagen a la izquierda, texto a la derecha */
+/* Imagen a la izquierda, texto a la derecha */
 .resumen_Servicio_De {
     display: flex;
     align-items: center;
@@ -795,7 +808,7 @@ main{
     -webkit-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
     -moz-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
     .img_servicio_De{
-        width: 40%; /* Ajusta según tu imagen */
+        width: 40%;
         max-width: 100%;
         height: auto;
         img{
@@ -807,7 +820,7 @@ main{
         max-width: 500px;
         h2 {
             font-size: 28px;
-            color: var(--color-primary-button); /* Azul oscuro */
+            color: var(--color-primary-button);
             margin-bottom: 15px;
         }
         p {
@@ -830,15 +843,14 @@ main{
         }
     }
 }
-/* 🔹 Responsive: Ajuste en móviles */
+/* Responsive: Ajuste en móviles */
 @media screen and (max-width: 1022px) {
     .resumen_Servicio {
         flex-direction: column;
         text-align: center;
     }
-
     .img_servicio{
-        width: 40%; /* Ajusta según tu imagen */
+        width: 40%;
         max-width: 100%;
         height: auto;
         img{
@@ -846,13 +858,11 @@ main{
             height: 100%;
         }
     }
-
     .content_Servicio {
         max-width: 100%;
     }
 }
-
-/* 📌 Imagen a la Derecha, texto a la Izquierda */
+/* Imagen a la Derecha, texto a la Izquierda */
 .resumen_Servicio_Iz {
     display: flex;
     align-items: center;
@@ -866,7 +876,7 @@ main{
     -webkit-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
     -moz-box-shadow: -6px 5px 5px 0px rgba(199,199,199,0.75);
     .img_servicio_Iz{
-        width: 40%; /* Ajusta según tu imagen */
+        width: 40%;
         max-width: 100%;
         height: auto;
         img{
@@ -881,7 +891,7 @@ main{
         }
         h2 {
             font-size: 28px;
-            color: var(--color-primary-button); /* Azul oscuro */
+            color: var(--color-primary-button);
             margin-bottom: 15px;
         }
         p {
@@ -913,29 +923,20 @@ main{
         margin: 20px 0;
     }
 }
-
-/* 🔹 Responsive: Ajuste en móviles */
+/* Responsive: Ajuste en móviles */
 @media screen and (max-width: 768px) {
     .calendar-section {
         flex-direction: column; /* En móviles, imagen y texto en columna */
         text-align: center;
     }
-
     .calendar-image img {
         width: 90%;
     }
-
     .calendar-content {
         max-width: 100%;
     }
 }
-
 /* Fin Página Servicios Cliente */
-
-/* Inicio Página Servicios Empresa */
-
-/* Fin Página Servicios Empresa */
-
 /* FIN PÁGINAS WEB */
 
 
@@ -975,7 +976,6 @@ main{
         }
     }
 }
-
 /* Fin Página Terminos */
 /* FIN PÁGINAS POLÍTICAS */
 
@@ -1014,5 +1014,20 @@ footer{
     justify-content: center;
     align-items: center;
     width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    footer{
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        .section_footer{
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+            flex-wrap: nowrap;
+            gap: 15px;
+        }
+    }
 }
 /* FIN FOOTER */

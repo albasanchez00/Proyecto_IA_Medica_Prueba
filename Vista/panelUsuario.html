@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Usuario</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
     <meta name="description" content="Panel de usuario con estadísticas, recordatorios y gestión médica para mejorar el seguimiento de tratamientos.">
     <link rel="stylesheet" href="../CSS/style2.css">
     <script src="../JS/panelUsuario.js"></script>
     <script src="../JS/asistente.js"></script>
+    <script src="../JS/menuToggle.js"></script>
 </head>
 <body>
     <section class="contenedor">
@@ -16,7 +18,7 @@
                 <picture>
                     <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
                 </picture>
-                
+                <!-- Botón de menú hamburguesa -->
                 <section class="section_nav">
                     <div class="menu-toggle" id="menu-toggle">
                         <span></span>
@@ -43,17 +45,20 @@
         <main id="main_panelUser">
             <section class="section_main">
                 <section class="section_panelUser">
+                    <!-- Menu Panel de Usuario -->
                     <nav class="nav_panelUser">
                         <ul>
                             <li><a href="./pedirCita.html">Citas Médicas</a></li>
-                            <li><a href="#">Estadísticas</a></li>
-                            <li><a href="#">Recordatorios</a></li>
-                            <li><a href="#">Historial Médico</a></li>
-                            <li><a href="./mediAsistente.html">Asistente</a></li>
-                            <li><a href="#">Configuración</a></li>
+                            <li><a href="./estadisticasUsuario.html">Estadísticas</a></li>
+                            <li><a href="./recordatorios.html">Recordatorios</a></li>
+                            <li><a href="./historialMedico.html">Historial Médico</a></li>
+                            <li><a href="./registroTratamiento.html">Tratamientos</a></li>
+                            <li><a href="./configUsuario.html">Configuración</a></li>
                         </ul>
                     </nav>
                 </section>
+
+                <!-- Seccion Tarjetas Funcionalidades -->
                 <section class="dashboard-overview">
                     <div class="card">⏰ Recordatorios de Medicación</div>
                     <div class="card">📉 Evolución de Síntomas</div>
@@ -67,17 +72,25 @@
                 <!-- Botón flotante -->
                 <div id="chat-toggle" onclick="toggleChat()">💬</div>
 
-                <!-- Ventana de chat -->
+                <!-- Ventana de chat asistente -->
                 <div id="chat-box">
-                    <div id="chat-header">Asistente Virtual <span onclick="toggleChat()">✖</span></div>
-                    <div id="chat-body">
-                        <p><strong>Asistente:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
-                        <div id="chat-messages"></div>
-                        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." onkeypress="handleKey(event)">
-                    </div>
+                <div id="chat-header">Asistente Virtual <span onclick="toggleChat()">X</span></div>
+                <div id="chat-body">
+                    <p><strong>Asistente:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
+                    <div id="chat-messages"></div>
+                    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." onkeypress="handleKey(event)">
                 </div>
+                </div>
+
+                <script>
+                function toggleChat() {
+                const chatBox = document.getElementById("chat-box");
+                chatBox.classList.toggle("open");
+                }
+                </script>
             </section>
         </main>
+        
         <footer itemscope itemtype="https://schema.org/WPFooter">
             <section class="section_footer">
                 <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
@@ -85,8 +98,9 @@
                     <nav>
                         <ul>
                             <li><a href="../index.html" itemprop="url">Inicio</a></li>
-                            <li><a href="#" itemprop="url">Servicios</a></li>
-                            <li><a href="#" itemprop="url">Soporte</a></li>
+                            <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                            <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                            <li><a href="#" itemprop="url">Documentación</a></li>
                             <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
                         </ul>
                     </nav>

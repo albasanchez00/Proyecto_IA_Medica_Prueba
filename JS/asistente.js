@@ -1,41 +1,38 @@
-function sendMessage() {
-  const input = document.getElementById("chat-input");
-  const message = input.value.trim();
+async function handleKey(event) {
+  if (event.key === "Enter") {
+    const input = document.getElementById("chat-input");
+    const message = input.value.trim();
+    if (!message) return;
 
-  if (message !== "") {
-    const chatLog = document.getElementById("chat-messages");
+    appendMessage("Usuario", message);
+    input.value = ""; // Limpiar el input
 
-    // Mensaje del usuario
-    const userMsg = document.createElement("div");
-    userMsg.className = "user-message";
-    userMsg.innerHTML = `<strong>Tú:</strong> ${message}`;
-    chatLog.appendChild(userMsg);
+    try {
+      // Reemplaza esta URL con tu webhook real
+      const response = await fetch("https://primary-production-8eee.up.railway.app/webhook-test/asistente", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+      });
 
-    // Crear el contenedor del mensaje del asistente
-    const aiMsg = document.createElement("div");
-    aiMsg.className = "ai-message";
-    aiMsg.innerHTML = `<strong>Asistente:</strong> Procesando tu consulta...`;
-    chatLog.appendChild(aiMsg);
+      const data = await response.json();
 
-    input.value = "";
-    chatLog.scrollTop = chatLog.scrollHeight;
-
-    // Llamar al webhook de n8n con el mensaje del usuario
-    fetch("https://primary-production-8eee.up.railway.app/webhook-test/asistente", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ mensaje: message })
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log("Respuesta del asistente:", data.respuesta); // 👈 muy útil para depurar
-      aiMsg.innerHTML = `<strong>Asistente:</strong> ${data.result}`;
-    })
-    .catch(error => {
-      aiMsg.innerHTML = `<strong>Asistente:</strong> Ocurrió un error al procesar tu mensaje.`;
-      console.error("Error:", error);
-    });
+      if (data.reply) {
+        appendMessage("Asistente", data.reply);
+      } else {
+        appendMessage("Asistente", "Lo siento, no pude entender tu mensaje.");
+      }
+    } catch (error) {
+      console.error("Error en el asistente:", error);
+      appendMessage("Asistente", "Ocurrió un error al procesar tu mensaje.");
+    }
   }
+}
+
+function appendMessage(sender, text) {
+  const messagesContainer = document.getElementById("chat-messages");
+  const messageElement = document.createElement("p");
+  messageElement.innerHTML = `<strong>${sender}:</strong> ${text}`;
+  messagesContainer.appendChild(messageElement);
+  messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll automático
 }

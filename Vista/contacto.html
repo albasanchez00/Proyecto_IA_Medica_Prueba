@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/style.css">
     <script src="../JS/formContacto.js"></script>
+    <script src="../JS/menuToggle.js"></script>
 </head>
 <body>
     <section>
@@ -43,7 +45,7 @@
     
         <main>
             <section class="section_main">
-                <section class="section_form_2">
+                <section class="section_form">
                     <form action="formContacto.js" method="get" id="formulario">
                         <p>
                             <label for="nombre">Nombre:*</label>
@@ -55,13 +57,13 @@
                         </p>
                         <p>
                             <label for="movil">Teléfono:</label>
-                            <input type="text" id="telefono" name="telefono">
+                            <input type="tel" name="movil" id="telefono">
                         </p>
                         <p>
                             <button type="submit" id="btn-submit">Enviar</button>
                         </p>
                     </form>
-                    <picture><img src="./media/img/form_isometric-design-of-a-customer-service-center.svg" alt="customer service center"></picture>
+                    <picture><img src="../Vista/media/img/form_isometric-design-of-a-customer-service-center.svg" alt="customer service center"></picture>
                 </section>
             </section>
         </main>
@@ -72,10 +74,11 @@
                 <section class="section_nav_footer">
                     <nav>
                         <ul>
-                            <li><a href="../index.html">Inicio</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="#">Soporte</a></li>
-                            <li><a href="./contacto.html">Contacto</a></li>
+                            <li><a href="../index.html" itemprop="url">Inicio</a></li>
+                            <li><a href="./serviciosEmpresa.html" itemprop="url">Servicios Clientes</a></li>
+                            <li><a href="./serviciosCliente.html" itemprop="url">Servicios Empresas</a></li>
+                            <li><a href="#" itemprop="url">Documentación</a></li>
+                            <li><a href="./contacto.html" itemprop="url">Contacto</a></li>
                         </ul>
                     </nav>
                 </section>

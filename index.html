@@ -2,9 +2,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Metaetiquetas recomendadas -->
+    <meta name="description" content="VitaLink: Plataforma para la gestión de tratamientos médicos, citas, síntomas y reportes de salud.">
+    <meta name="keywords" content="salud, tratamientos, citas médicas, síntomas, historial clínico, plataforma médica, VitaLink">
+    <meta name="author" content="VitaLink Team">
+    <meta name="robots" content="index, follow">
+    <!-- Meta para redes sociales (Open Graph para Facebook y LinkedIn) -->
+    <meta property="og:title" content="VitaLink - Gestión de Tratamientos Médicos">
+    <meta property="og:description" content="Gestiona tus tratamientos, controla síntomas y recibe recordatorios inteligentes con VitaLink.">
+    <meta property="og:image" content="https://tusitio.com/media/logo_IA_Medica-blanco.svg">
+    <meta property="og:type" content="website">
     <title>VitaLink</title>
+    <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
     <script src="./JS/sccript.js"></script>
+    <script src="./JS/menuToggle.js"></script>
 </head>
 <body>
     <section>
@@ -43,6 +55,7 @@
     <main>
         <section class="section_main">
             <section class="section_form">
+                <!-- Formulario de Contacto -->
                 <form action="formContacto.js" method="get" id="formulario">
                     <p>
                         <label for="nombre">Nombre:*</label>
@@ -63,6 +76,7 @@
                 <picture><img src="./Vista/media/img/form_isometric-design-of-a-customer-service-center.svg" alt="customer service center"></picture>
             </section>
 
+            <!-- Seccion Servicios -->
             <section class="features-container">
                 <div class="feature">
                     <picture><img src="./Vista/media/icons/calendar-days-icon.svg" alt="calendar icon" class="icon"></picture>
@@ -96,8 +110,7 @@
                 </div>
             </section>
             
-
-
+            <!-- Seccion Descripción Servicios -->
             <section id="section_main_2">
                 <section class="section_services">
                     <div class="div_general_services">
@@ -158,8 +171,9 @@
                 <nav>
                     <ul>
                         <li><a href="./index.html">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Soporte</a></li>
+                        <li><a href="./Vista/serviciosCliente.html">Servicios Clientes</a></li>
+                        <li><a href="./Vista/serviciosEmpresa.html">Servicios Empresas</a></li>
+                        <li><a href="#">Documentación</a></li>
                         <li><a href="./Vista/contacto.html">Contacto</a></li>
                     </ul>
                 </nav>

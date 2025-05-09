@@ -1,9 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
     const cardData = [
         { title: "📊 Estadísticas", items: ["📉 Evolución de síntomas", "📊 Progreso del tratamiento", "✅ Adherencia al tratamiento"] },
-        { title: "⏰ Recordatorios", items: ["🔔 Próximos medicamentos", "🏥 Próxima cita", "⚠️ Alertas de dosis olvidadas"] },
         { title: "📄 Historial Médico", items: ["📅 Citas pasadas y diagnósticos", "📂 Descarga de informes"] },
-        { title: "📩 Mensajes", items: ["💬 3 mensajes sin leer", "🔔 Notificaciones recientes"] },
+        { 
+          title: "⏰ Recordatorios", 
+          items: [
+            "🔔 Próximos medicamentos", 
+            "🏥 Próxima cita", 
+            "⚠️ Alertas de dosis olvidadas", 
+            "<a href='../Vista/recordatorios.html' class='btn-ver-mas'>Ver más</a>"
+          ] 
+        },
+        { 
+          title: "📩 Mensajes", 
+          items: [
+            "💬 3 mensajes sin leer", 
+            "🔔 Notificaciones recientes", 
+            "<a href='../Vista/mensajesUsuario.html' class='btn-ver-mas'>Ir a bandeja</a>"
+          ] 
+        },
+        
         { title: "⚙️ Configuración", items: ["👤 Editar perfil", "🔧 Ajustes de notificaciones"] },
         { title: "🤖 Asistente", items: ["🗣️ Consultar", "🔧 Configuración"] }
     ];

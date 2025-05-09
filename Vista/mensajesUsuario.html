@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recordatorios Paciente</title>
     <link rel="shortcut icon" href="./media/favicon_IA_Medica.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <meta name="description" content="Panel de usuario con recordatorios y gestión médica para mejorar el seguimiento de tratamientos.">
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <script src="../JS/mensajesUsuario.js"></script>
     <script src="../JS/menuToggle.js"></script>
 </head>
 <body>
-    <section>
+    <section class="contenedor">
         <header>
             <section class="section_header">
                 <picture>
                     <img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink">
                 </picture>
-        
-                <!-- Botón de menú hamburguesa -->
+                
                 <section class="section_nav">
                     <div class="menu-toggle" id="menu-toggle">
                         <span></span>
@@ -33,38 +34,43 @@
                         </ul>
                     </nav>
                 </section>
-        
+                
                 <section class="section_user">
                     <picture><img src="./media/icons/user-rounded-icon.svg" alt="icon user"></picture>
                     <a href="./inicioSesion.html">Inicio Sesión</a>
                 </section>
             </section>
         </header>
-
-        <main class="main-iSesion">
-            <section class="section_iSesion">
-                <!-- Formulario de Inicio de Sesión -->
-                <form action="#" method="get">
-                    <p>
-                        <label for="correo">Correo Electrónico:</label>
-                        <input type="email" name="correo" id="email">
-                    </p>
-                    <p>
-                        <label for="psw">Contraseña:</label>
-                        <input type="password" name="psw" id="password">
-                    </p>
-                    <p>
-                        <a href="./registro.html">¿No tienes cuenta? Registrate</a>
-                    </p>
-                    <p>
-                        <button type="submit" id="btn-sesion">Continuar</button>
-                    </p>
-                </form>
+        
+        <main id="main_panelUser">
+            <h1 class="text_center">📩 Bandeja de Mensajes</h1>
+        
+            <section class="config-usuario-panel">
+              <div class="config-usuario-menu">
+                <button class="btn-config activo">Todos</button>
+                <button class="btn-config">No leídos</button>
+                <button class="btn-config">Importantes</button>
+              </div>
+        
+              <div class="config-usuario-formulario">
+                <article class="mensaje">
+                  <h3>Resultado de análisis disponible</h3>
+                  <p><strong>De:</strong> Centro Médico</p>
+                  <p><strong>Fecha:</strong> 2024-04-14</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </article>
+        
+                <article class="mensaje">
+                  <h3>Recordatorio: cita mañana a las 10:00</h3>
+                  <p><strong>De:</strong> Sistema</p>
+                  <p><strong>Fecha:</strong> 2024-04-13</p>
+                  <p>Recuerda tu cita médica programada para mañana.</p>
+                </article>
+              </div>
             </section>
         </main>
-
-
-        <footer>
+        
+        <footer itemscope itemtype="https://schema.org/WPFooter">
             <section class="section_footer">
                 <picture><img src="./media/logo_IA_Medica-blanco.svg" alt="logotipo VitaLink"></picture>
                 <section class="section_nav">
@@ -81,10 +87,10 @@
                 <section class="section_nav_politics">
                     <nav>
                         <ul>
-                            <li><a href="#">Políticas Privacidad</a></li>
-                            <li><a href="./terminoCondiciones.html">Políticas de uso</a></li>
-                            <li><a href="#">Politicas de cookies</a></li>
-                            <li><a href="#">Base legal</a></li>
+                            <li><a href="#" itemprop="url">Políticas de Privacidad</a></li>
+                            <li><a href="./terminoCondiciones.html" itemprop="url">Políticas de Uso</a></li>
+                            <li><a href="#" itemprop="url">Políticas de Cookies</a></li>
+                            <li><a href="#" itemprop="url">Base Legal</a></li>
                         </ul>
                     </nav>
                 </section>
